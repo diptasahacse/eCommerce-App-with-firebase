@@ -9,6 +9,15 @@
     android:gravity="center"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/mainlogo"
+        android:layout_margin="30dp"
+
+        />
+
+
 
 <EditText
     android:layout_width="250dp"
@@ -72,6 +81,19 @@
         android:background="@drawable/buttonback"
 
         />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Already Register..? Signin"
+        android:textSize="20dp"
+        android:textColor="#0841E6"
+        android:id="@+id/alreadyregisterid"
+
+
+        />
+
+
+
     <ProgressBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

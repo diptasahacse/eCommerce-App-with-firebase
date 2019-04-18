@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".SplashScreen">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/applogo"
+        android:layout_marginBottom="20dp"
+
+
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome To Shundorbon"
+        android:textColor="#E6E9E6"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+
+
+        />
+
+    <ProgressBar
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressbarid"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:progressTint="#F5F3F5"
+        android:backgroundTint="#889955"
+
+        />
+
+
+
+</LinearLayout>

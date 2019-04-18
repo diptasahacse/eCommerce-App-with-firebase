@@ -1,5 +1,6 @@
 package com.example.blogapp;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,15 +8,18 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private EditText fullname,emailid,pass,conpass;
+    private TextView alreadyregistersignin;
     private Button register;
     private ProgressBar progressBar;
     private FirebaseAuth mAuth;
@@ -29,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         emailid = findViewById(R.id.signupemailid);
         pass = findViewById(R.id.signuppassid);
         conpass = findViewById(R.id.signupconpassid);
+        alreadyregistersignin = findViewById(R.id.alreadyregisterid);
         register = findViewById(R.id.signupregisterbutonid);
         progressBar = findViewById(R.id.progressbarid);
 
@@ -37,6 +42,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mAuth = FirebaseAuth.getInstance();
 
         register.setOnClickListener(this);
+        alreadyregistersignin.setOnClickListener(this);
 
 
     }
@@ -103,6 +109,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
         }
+        if(v.getId() == R.id.alreadyregisterid)
+        {
+            Intent intent = new Intent(MainActivity.this,Signin.class);
+            startActivity(intent);
+            finish();
+        }
 
 
     }
@@ -117,12 +129,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                     Toast.makeText(getApplicationContext(),"Successfully Register",Toast.LENGTH_LONG).show();
                     progressBar.setVisibility(View.INVISIBLE);
+                    Intent intent = new Intent(MainActivity.this,Signin.class);
+                    startActivity(intent);
+                    finish();
 
                 }
                 else
                 {
-                    Toast.makeText(getApplicationContext(),"Unsuccessfully Register or Already Registered",Toast.LENGTH_LONG).show();
-
+                    //checking user already registerd or not
+                    if(task.getException() instanceof FirebaseAuthUserCollisionException)
+                    {
+                        Toast.makeText(getApplicationContext(),"This Email Already Registered",Toast.LENGTH_LONG).show();
+                    }
+                    else
+                    {
+                        Toast.makeText(getApplicationContext(),"Unsuccessfully Register",Toast.LENGTH_LONG).show();
+                    }
                     progressBar.setVisibility(View.INVISIBLE);
                 }
 
