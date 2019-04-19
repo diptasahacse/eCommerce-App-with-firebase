@@ -111,10 +111,12 @@ public class Signin extends AppCompatActivity implements View.OnClickListener {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful())
                 {
-                    progressBar.setVisibility(View.INVISIBLE);
+
+                    Toast.makeText(getApplicationContext(),"Welcome",Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(Signin.this,Shopping.class);
                     startActivity(intent);
                     finish();
+
 
                 }
                 else
@@ -128,6 +130,7 @@ public class Signin extends AppCompatActivity implements View.OnClickListener {
             }
         });
     }
+
 
 
 }
