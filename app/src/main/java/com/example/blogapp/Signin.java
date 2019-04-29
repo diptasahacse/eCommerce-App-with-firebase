@@ -29,6 +29,8 @@ public class Signin extends AppCompatActivity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signin);
+        this.setTitle("Sign In");
+
         signinemail = findViewById(R.id.signinemailid);
         signinpass = findViewById(R.id.signinpassid);
         newuserregister = findViewById(R.id.newuserregisterid);
@@ -42,6 +44,12 @@ public class Signin extends AppCompatActivity implements View.OnClickListener {
         newuserregister.setOnClickListener(this);
 
     }
+
+
+
+
+
+
 
     @Override
     public void onClick(View v) {

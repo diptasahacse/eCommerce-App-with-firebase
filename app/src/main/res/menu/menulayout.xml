@@ -1,29 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:showIn="navigation_view">
-
-    <group android:checkableBehavior="single">
-
-        <item
-            android:id="@+id/homeiconid"
-            android:title="Home"
-            android:icon="@drawable/ic_home_black_24dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
-            />
+
+
         <item
             android:id="@+id/profileiconid"
             android:title="Profile"
             android:icon="@drawable/ic_person_black_24dp"
-
-
-            />
-
-        <item
-            android:id="@+id/shoppingcarticonid"
-            android:title="Cart"
-            android:icon="@drawable/ic_shopping_cart_black_24dp"
+            app:showAsAction="never"
 
 
             />
@@ -31,16 +17,11 @@
 
 
 
-    </group>
-
-
-
-    <item android:title="Communicate">
-        <menu>
             <item
                 android:id="@+id/feedbackiconid"
                 android:title="Feedback"
                 android:icon="@drawable/ic_feedback_black_24dp"
+                app:showAsAction="never"
 
 
                 />
@@ -48,6 +29,7 @@
                 android:id="@+id/calliconid"
                 android:title="Call"
                 android:icon="@drawable/ic_phone_black_24dp"
+                app:showAsAction="never"
 
 
                 />
@@ -56,6 +38,16 @@
                 android:id="@+id/shareiconid"
                 android:title="Share"
                 android:icon="@drawable/ic_share_black_24dp"
+                app:showAsAction="never"
+
+
+                />
+
+            <item
+                android:id="@+id/signouticonid"
+                android:title="Signout"
+                android:icon="@drawable/signouticon"
+                app:showAsAction="never"
 
 
                 />
@@ -64,13 +56,13 @@
 
 
 
-        </menu>
 
 
 
 
 
-    </item>
+
+
 
 
 

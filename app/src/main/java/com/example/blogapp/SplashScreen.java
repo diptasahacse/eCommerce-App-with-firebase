@@ -11,9 +11,11 @@ public class SplashScreen extends AppCompatActivity {
     private ProgressBar progressBar;
     private int prog;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.setTitle("");
 
         //remove title
         requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -37,7 +39,7 @@ public class SplashScreen extends AppCompatActivity {
     }
 
     private void startApp() {
-        Intent intent = new Intent(SplashScreen.this,MainActivity.class);
+        Intent intent = new Intent(SplashScreen.this,Signin.class);
         startActivity(intent);
         finish();
 
@@ -45,7 +47,7 @@ public class SplashScreen extends AppCompatActivity {
     }
 
     private void doWork() {
-        for(prog=1;prog<=100;prog++)
+        for(prog=10;prog<=100;prog+=2)
         {
             try {
                 Thread.sleep(100);

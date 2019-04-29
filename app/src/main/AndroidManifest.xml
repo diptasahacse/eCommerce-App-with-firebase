@@ -9,7 +9,10 @@
         android:roundIcon="@drawable/applogo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".ItemDescription"></activity>
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".ShoppingCart" />
+        <activity android:name=".MainActivity" />
         <activity android:name=".Shopping" />
         <activity android:name=".Signin" />
         <activity android:name=".SplashScreen">
